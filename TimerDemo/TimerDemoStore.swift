@@ -30,7 +30,8 @@ class TimerDemoStore: ObservableObject {
 
         // Create Trigger
         let date = Date().addingTimeInterval(TimeInterval(seconds))
-        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .minute, .second], from: date)
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        print("==== components: \(dateComponents) =====")
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
 
         // Create Request
